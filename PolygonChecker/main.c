@@ -22,9 +22,6 @@ int main() {
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
-			char* is_triangle = isTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
-			printf_s("%s \n", is_triangle);
-			continueProgram = false;
 			break;
 		case 0:
 			continueProgram = false;
@@ -64,13 +61,4 @@ int* getTriangleSides(int* triangleSides) {
 		scanf_s("%d", &triangleSides[i]);
 	}
 	return triangleSides;
-}
-
-char* isTriangle(int side1, int side2, int side3) {
-	if (side1 + side2 > side3 || side2 + side3 > side1 || side1 + side3 > side2 || side1 > 0 || side2 > 0 || side3 > 0) {
-		return "These sides can form a triangle. ";
-	}
-	else {
-		return "These sides can't form a triangle. ";
-	}
 }
