@@ -22,9 +22,6 @@ int main() {
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
-			char* is_triangle = isTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
-			printf_s("%s \n", is_triangle);
-			continueProgram = false;
 			break;
 		case 0:
 			continueProgram = false;
@@ -65,5 +62,3 @@ int* getTriangleSides(int* triangleSides) {
 	}
 	return triangleSides;
 }
-
-char* isTriangle(int side1, int side2, int side3);
