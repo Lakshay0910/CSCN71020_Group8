@@ -2,10 +2,10 @@
 #include "CppUnitTest.h"
 #include <string>
 
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+// include the header from PolygonChecker project
+#include "../PolygonChecker/TriangleType.h"  
 
-// Forward declaration of the function we will implement in main project
-std::string GetTriangleType(int a, int b, int c);
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace PolygonCheckerTests
 {
