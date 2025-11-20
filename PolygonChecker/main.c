@@ -22,7 +22,7 @@ int main() {
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 			int is_triangle = isTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			if (is_triangle == 1) {
-				printf_s("%s \n", "These sides can't form a triangle. ");
+				printf_s("%s \n", "These sides can form a triangle. ");
 			}
 			else if (is_triangle == 0) {
 				printf_s("%s \n", "These sides can't form a triangle. ");
