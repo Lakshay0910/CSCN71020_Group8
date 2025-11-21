@@ -26,8 +26,8 @@ int main() {
 			printf_s("%s\n", result);
 			break;
 		case 2:
-			printf_s("Four - Point Shape Rectangle Selected. \n");
-			checkRectangleFeature();
+			printf_s("Four - Point Rectangle Selected. \n");
+			checkRectangleFeature();  
 			break;
 		case 0:
 			continueProgram = false;
@@ -56,7 +56,12 @@ int printShapeMenu() {
 	int shapeChoice;
 
 	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
+	while (scanf_s("%d", &shapeChoice) != 1)
+	{
+		printf("Invalid input. Please enter a numeric value for shape choice: ");
+		int c;
+		while ((c = getchar()) != '\n' && c != EOF);
+	}
 
 	return shapeChoice;
 }
@@ -65,7 +70,19 @@ int* getTriangleSides(int* triangleSides) {
 	printf_s("Enter the three sides of the triangle: ");
 	for (int i = 0; i < 3; i++)
 	{
-		scanf_s("%d", &triangleSides[i]);
+		// handles invalid input for triangle sides
+		while (scanf_s("%d", &triangleSides[i]) != 1)
+		{
+			printf_s("Invalid input. Please enter a numeric value for side: ");
+
+			// clear the bad input buffer
+			int c;
+			while ((c = getchar()) != '\n' && c != EOF);
+			{
+
+			}
+		}
+		
 	}
 	return triangleSides;
 }
