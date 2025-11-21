@@ -16,7 +16,7 @@ namespace PolygonCheckerTests
     {
     public:
 
-        TEST_METHOD(TestDistance_Simple345)
+        TEST_METHOD(TestDistance_Simple354)
         {
             Point p1 = { 0.0, 0.0 };
             Point p2 = { 3.0, 4.0 };
@@ -40,5 +40,21 @@ namespace PolygonCheckerTests
             Assert::AreEqual(SHAPE_RECTANGLE, actualShapeType,
                 L"Failed to identify 6x4 shape as a rectangle.");
         }
+
+        TEST_METHOD(TestGetShapeType_IsSquare)
+        {
+            // A 4x4 square
+            Point p1 = { 0.0, 0.0 };
+            Point p2 = { 4.0, 0.0 };
+            Point p3 = { 4.0, 4.0 };
+            Point p4 = { 0.0, 4.0 };
+            Point points[4] = { p1, p2, p3, p4 };
+
+            int actualShapeType = getShapeType(points);
+
+            Assert::AreEqual(SHAPE_SQUARE, actualShapeType,
+                L"Failed to identify 4x4 shape as a square.");
+        }
+
     };
 }
