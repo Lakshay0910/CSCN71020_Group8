@@ -50,7 +50,7 @@ int getShapeType(Point points[4])
 
 		if (width == height)
 		{
-			return 4; // square
+			return 2; // square
 		}
 		else
 		{
@@ -63,10 +63,53 @@ int getShapeType(Point points[4])
 	}
 }
 
-		
-	
 
-void checkRectangleFeature(void)
+void checkRectangleFeature(void) 
 {
-		
+	Point points[4];
+
+	// 1. Get the four points from the user
+	for (int i = 0; i < 4; i++)
+	{
+		char promptX[50];
+		char promptY[50];
+
+		sprintf(promptX, "Enter x coordinate for Point %d: ", i + 1);
+		getPointCoordinate(promptX, &points[i].x);
+
+		sprintf(promptY, "Enter y coordinate for Point %d: ", i + 1);
+		getPointCoordinate(promptY, &points[i].y);
 	}
+	
+	// 2. Determine the shape type
+	int resultShape = getShapeType(points);
+
+	switch (resultShape) {
+		case 1:
+			printf("The shape is a Quadrilateral.\n");
+			break;
+		case 2:
+			printf("The shape is a Square.\n");
+			break;
+		case 3:
+			printf("The shape is a Rectangle.\n");
+			break;
+
+	}
+
+	// 3. Calculate the side lengths and the perimeter 
+	double side1 = calculateDistance(points[0], points[1]);
+	double side2 = calculateDistance(points[1], points[2]);
+	double side3 = calculateDistance(points[2], points[3]);
+	double side4 = calculateDistance(points[3], points[0]);
+
+	double perimeter = side1 + side2 + side3 + side4;
+	printf("Perimeter of the Shape : %.2f\n", perimeter);
+
+	// 4. Calculate the area for square and rectangle
+	if (resultShape == 2 || resultShape == 3) {
+		double area = side1 * side2;  // length * width || side * side for square
+		printf("Area of the Shape : %.2f\n", area);
+	}
+	
+}
