@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PolygonChecker", "PolygonChecker\PolygonChecker.vcxproj", "{2328FAE1-A1BF-420F-9F0C-C7CCC7F13314}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isTriangle", "isTriangle\isTriangle.vcxproj", "{293AF7A7-8397-49E5-E1E8-8005C57279D6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PolygonCheckerTests", "PolygonCheckerTests\isTriangle.vcxproj", "{293AF7A7-8397-49E5-E1E8-8005C57279D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
