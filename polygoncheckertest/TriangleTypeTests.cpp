@@ -37,5 +37,30 @@ namespace PolygonCheckerTests
         {
             Assert::AreEqual(std::string("Not a triangle"), GetTriangleType(0, 5, 5));
         }
+
+        TEST_METHOD(Isosceles_5_7_7)
+        {
+            Assert::AreEqual(std::string("Isosceles"), GetTriangleType(5, 7, 7));
+        }
+
+        TEST_METHOD(Invalid_ZeroSide)
+        {
+            Assert::AreEqual(std::string("Not a triangle"), GetTriangleType(0, 5, 5));
+        }
+
+        TEST_METHOD(Invalid_NegativeSide)
+        {
+            Assert::AreEqual(std::string("Not a triangle"), GetTriangleType(-3, 4, 5));
+        }
+
+        TEST_METHOD(Invalid_Boundary_1_2_3)
+        {
+            Assert::AreEqual(std::string("Not a triangle"), GetTriangleType(1, 2, 3));
+        }
+
+        TEST_METHOD(Isosceles_LargeValues)
+        {
+            Assert::AreEqual(std::string("Isosceles"), GetTriangleType(1000, 1000, 1500));
+        }
     };
 }
