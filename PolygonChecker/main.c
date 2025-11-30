@@ -22,8 +22,15 @@ int main() {
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
 			//printf_s("! %d\n", triangleSidesPtr[0]);
-			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
-			printf_s("%s\n", result);
+			int is_triangle = isTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
+			if (is_triangle == 1) {
+				printf_s("%s \n", "These sides can form a triangle. ");
+			}
+			else if (is_triangle == 0) {
+				printf_s("%s \n", "These sides can't form a triangle. ");
+			}
+			
+			continueProgram = false;
 			break;
 		case 2:
 			printf_s("Four - Point Rectangle Selected. \n");
@@ -85,4 +92,18 @@ int* getTriangleSides(int* triangleSides) {
 		
 	}
 	return triangleSides;
+}
+
+
+int isTriangle(int side1, int side2, int side3)
+{
+	if (side1 <= 0 || side2 <= 0 || side3 <= 0)
+		return 0;
+
+	if (side1 + side2 > side3 &&
+		side1 + side3 > side2 &&
+		side2 + side3 > side1)
+		return 1;
+
+	return 0;
 }
